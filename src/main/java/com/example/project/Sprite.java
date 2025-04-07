@@ -3,23 +3,35 @@ package com.example.project;
 public class Sprite {
     private int x, y;
 
+    //Sprite constructor with parameters x and y
+    //initializes x and y int
     public Sprite(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX(){return 1;}
-    public int getY(){return 1;}
+    public int getX(){return x;}    //returns x value
+    public int getY(){return y;}    //returns y value 
 
-    public void setX(){}
-    public void setY(){}
+    //method to set x value
+    //does not return any value 
+    public void setX(int newVal){ 
+        x = newVal;
+    }
+       //method to set y value
+    //does not return any value 
+    public void setY(int newVal){
+        y = newVal;
+    }
 
     public String getCoords(){ //returns the coordinates of the sprite ->"(x,y)"
-        return "";
+        return "(" + x + "," + y + ")";
     }
 
     public String getRowCol(int size){ //returns the row and column of the sprite -> "[row][col]"
-        return "[][]";
+    int row = (size-y) -1 ; //the row is the inverse of (size - y) - 1
+    int col = x;    //set colu value to x
+        return "[" + row + "][" + col + "]";    //return [row][col] string
     }
     
 
